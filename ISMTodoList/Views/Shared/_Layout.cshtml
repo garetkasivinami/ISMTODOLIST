@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/Default.css" />
+</head>
+<body>
+    <header>
+        <h1 class="logo">@Html.ActionLink("To do list", "Index", "Home", null, new { })<span>by benevinami</span></h1>
+        <div class="buttons">
+            @Html.Partial("_LoginPartial")
+        </div>
+    </header>
+    <main>
+        <div id="mainContainer">
+            @RenderBody()
+            <div class="footerInMainSection">
+                <p>© Віктор Герасимчук</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

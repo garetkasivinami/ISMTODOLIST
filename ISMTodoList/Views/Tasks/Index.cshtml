@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ISMTodoList.Models.UserTask>
+
+@{
+    ViewBag.Title = "Мій список справ!";
+}
+<section id="mainSection">
+    <div class="sectionHeader">
+        <div class="backgroundImage"></div>
+        <h1>Мій список справ!</h1>
+    </div>
+    <div class="toDoButton">
+        @Html.ActionLink("Створити нову справу!", "Create")
+    </div>
+    <div class="toDoButton" style="margin-top: 20px">
+        @Html.ActionLink("Пошук", "Search")
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table toDoListTable" style="width: 100%; border: 1px solid black">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @if (item.Date != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Date)
+                        }
+                        else
+                        {
+                            <p>відсутня</p>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="toDoButton">
+            @if ((ViewBag.ButtonsFlags & 2) == 2)
+            {
+                @Html.ActionLink("Вперед!", $"Index", "Tasks", new { page = ViewBag.page + 1 }, new { })
+            }
+        </div>
+        <div class="toDoButton">
+            @if ((ViewBag.ButtonsFlags & 1) == 1)
+            {
+                @Html.ActionLink("Назад", "Index", "Tasks", new { page = ViewBag.page - 1 }, new { })
+            }
+        </div>
+    }
+    else
+    {
+        <h1>Справи відсутні :(</h1>
+    }
+    @if (ViewBag.SearchFlags == 1)
+    {
+        <div class="toDoButton">
+            @Html.ActionLink("Повернутися до списка", "Index", "Tasks", null, new { })
+        </div>
+    }
+
+
+</section>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Пошук";
+}
+
+<section id="mainSection">
+    <div class="sectionHeader">
+        <div class="backgroundImage"></div>
+        <h1>Знайти справу</h1>
+    </div>
+    @using (Html.BeginForm("Search", "Tasks", FormMethod.Post, new { @class = "toDoForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.Label("Назва справи")
+                <div class="col-md-10">
+                    @Html.TextBox("targetName")
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Ключові слова опису")
+                <div class="col-md-10">
+                    @Html.TextBox("descKeyWord")
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Знайти" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</section>

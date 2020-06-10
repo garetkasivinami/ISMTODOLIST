@@ -1,0 +1,10 @@
+﻿
+@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink($"Вийти з акаунта {User.Identity.Name}", "Logoff", "Account", null, new { });
+}
+else
+{
+    @Html.ActionLink("Авторизуватися", "Login", "Account", null, new { });
+    @Html.ActionLink("Зареєструватися", "Register", "Account", null, new { });
+}

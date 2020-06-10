@@ -1,0 +1,260 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-color: #8cf2ff;
+}
+
+header, footer {
+    color: #00ffb8;
+}
+
+footer {
+    background: linear-gradient(to bottom, grey 5%, white 5%);
+    padding: 30px;
+    color: black;
+    font-size: 20px;
+    height: 60px;
+}
+header * {
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(to bottom, white 95%, #bdbdbd 95%);
+    position: relative;
+}
+
+#mainSection {
+    position: relative;
+}
+
+    #mainSection ul {
+        padding: 0;
+        position: relative;
+        list-style-type: none;
+    }
+
+    #mainSection li {
+        padding: 0 15px;
+        position: relative;
+        font-size: 18px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    #mainSection  .star {
+        color: aqua;
+        text-shadow: 1px 1px 2px black;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    #mainSection li:not(:nth-last-of-type(1)):after {
+        position: absolute;
+        font-size: 40px;
+        content: '★';
+        bottom: -50px;
+        left: calc(50% - 15px);
+        color: aqua;
+        text-shadow: 1px 1px 2px black;
+    }
+.toDoButton > * {
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px 30px;
+    color: white;
+    border: 1px double white;
+    background-color: #00ffd3;
+    text-shadow: 0.5px 0.5px 3px black;
+}
+
+.toDoButton {
+    padding-top: 10px;
+    text-align: center;
+}
+hr {
+    border: none;
+    border-bottom: 1px solid aqua;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#mainSection h1 {
+    font-family: Arial;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 1px 1px 2px black;
+    color: #00ffd3;
+}
+
+.sectionHeader {
+    position: relative;
+    height: 400px;
+}
+
+    .sectionHeader > h1 {
+        position: relative;
+        top: -80%;
+    }
+
+.backgroundImage {
+    position: relative;
+    left: -10px;
+    background-image: url("BackGroundImage.jpg");
+    height: 400px;
+    width: 90.25vw;
+    top: -10px;
+    filter: blur(3px);
+}
+
+#mainSection > p {
+    font-family: Arial;
+    font-size: 25px;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.logo {
+    text-shadow: 1px 1px 2px black;
+    font-size: 40px;
+    font-family: "Tempus Sans ITC";
+    padding: 5px 0 5px 15px;
+}
+
+    .logo > span {
+        padding-left: 20px;
+        font-size: 28px;
+        font-family: "Baskerville Old Face";
+    }
+
+    .logo > a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+.buttons {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+}
+
+#mainContainer {
+    padding: 10px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: white;
+}
+
+.buttons > a {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 7px;
+    background-color: transparent;
+    color: #00ffd3;
+    padding: 10px;
+    height: 40%;
+    border: none;
+    text-shadow: 1px 1px 1px black;
+    font-size: 22px;
+}
+
+    .buttons > a:hover {
+        text-shadow: none;
+        background-color: #00ffd3;
+        color: white;
+        transition: 200ms;
+    }
+.toDoListTable {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+    .toDoListTable tr > th {
+        font-size: 20px;
+    }
+    .toDoListTable tr > td {
+        font-size: 17px;
+    }
+.toDoListTable tr > * {
+    border: 1px solid black;
+    text-align: center;
+}
+    .toDoListTable tr > *:nth-child(1) {
+        width: 20%;
+    }
+    .toDoListTable tr > *:nth-child(2) {
+        width: 60%;
+    }
+    .toDoListTable tr > *:nth-child(3) {
+        width: 7%;
+    }
+    .toDoListTable tr > *:nth-child(4) {
+        width: 13%;
+    }
+    .toDoListTable tr:nth-child(2n+1){
+        background-color: honeydew;
+    }
+    .toDoListTable tr:first-child {
+        background-color: grey;
+        color: white;
+        font-size: 20px;
+    }
+    @media screen and (max-height: calc(100vh - 60px)) 
+    {
+        footer {
+        position: fixed;
+        bottom: 0;
+        }
+    }
+.footerInMainSection {
+    height: 60px;
+    position: relative;
+    background: linear-gradient(to bottom, grey 5%, #e0e0e0 5%);
+    width: calc(100% + 20px);
+    left: -10px;
+    top: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+    .footerInMainSection * {
+        padding-top: 20px;
+        padding-left: 10%;
+    }
+.toDoForm {
+    font-size: 36px;
+    text-align: center;
+}
+.toDoForm input {
+    padding: 10px;
+}
+    .toDoForm label {
+        text-shadow: 1px 1px 2px black;
+        color: #00ffd3;
+    }
+
+    .toDoForm textarea {
+        max-width: 50%;
+        width: 25%;
+        height: 20vh;
+        max-height: 50vh;
+    }
+
+    .toDoForm button, .toDoForm input[type="submit"] {
+        font-size: 24px;
+        background-color: #00ffd3;
+        color: white;
+        padding: 5px 50px;
+        border: 1px solid grey;
+    }
+.text-danger{
+    font-size: 18px;
+    position: absolute;
+    padding-top: 20px;
+    left: calc(57vw);
+    color: red;
+}
