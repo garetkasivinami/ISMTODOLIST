@@ -27,10 +27,7 @@ namespace ISMTodoList.Controllers
             if (ModelState.IsValid)
             {
                 User user = null;
-                using (UserContext db = new UserContext())
-                {
-                    user = db.Users.FirstOrDefault(u => u.Email == model.Name);
-                }
+                user = db.Users.FirstOrDefault(u => u.Email == model.Name);
                 if (user == null)
                 {
                     db.Users.Add(new User { Email = model.Name, Password = model.Password, Age = model.Age });
